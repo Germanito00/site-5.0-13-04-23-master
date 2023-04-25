@@ -44,7 +44,7 @@ body
 .D02
 {
 
-  
+ 
   width: 100%;
   height: 80%;
   justify-content: left;
@@ -58,7 +58,6 @@ body
 .D1 
 {
 
- 
   width: 50%;
   height: 100%;
   justify-content: center;
@@ -109,10 +108,10 @@ body
 
 }
 
-.D5
+.D04
 {
 
- 
+ background-color: lawngreen;
   width: 100%;
   height: 50%;
   justify-content: center;
@@ -121,3 +120,26 @@ body
   flex-direction: column;
 
 }
+
+    <label for="tamanho_hd">Tamanho do HD:</label>
+    <select id="tamanho_hd" onchange="atualizarPreco()">
+        <option value="1">1TB</option>
+        <option value="2">2TB</option>
+        <option value="4">4TB</option>
+    </select>
+    <label for="preco_hd">Preço:</label>
+    <p id="preco_hd">R$300</p>
+    <script type="text/javascript">
+        function atualizarPreco() {
+            var tamanho = document.getElementById("tamanho_hd").value;
+            var preco = 0;
+            if (tamanho == 1) {
+                preco = 300;
+            } else if (tamanho == 2) {
+                preco = 500;
+            } else if (tamanho == 4) {
+                preco = 800;
+            }
+            document.getElementById("preco_hd").innerHTML = "R$" + preco;
+        }
+    </script>

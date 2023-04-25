@@ -62,11 +62,33 @@ Capacidade:<select id="capacidade" class="capacidade" style="font-family: 'Commo
 </fieldset>
 
                     </div>
-                    <div class="D5"></div>
+                    <div class="D5"><botton>Comprar -></botton></div>
                 </div>
             </div>
         </div>
         
 
+        <label for="tamanho_hd">Tamanho do HD:</label>
+        <select id="tamanho_hd" onchange="atualizarPreco()">
+            <option value="1">1TB</option>
+            <option value="2">2TB</option>
+            <option value="4">4TB</option>
+        </select>
+        <label for="preco_hd">Preço:</label>
+        <p id="preco_hd">R$300</p>
+        <script type="text/javascript">
+            function atualizarPreco() {
+                var tamanho = document.getElementById("tamanho_hd").value;
+                var preco = 0;
+                if (tamanho == 1) {
+                    preco = 300;
+                } else if (tamanho == 2) {
+                    preco = 500;
+                } else if (tamanho == 4) {
+                    preco = 800;
+                }
+                document.getElementById("preco_hd").innerHTML = "R$" + preco;
+            }
+        </script>
 </body>
 </html>
